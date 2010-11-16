@@ -17,9 +17,6 @@
 	#define NOTIFY_INIT	inotify_init()
 	#define EVENT_SIZE  (sizeof (struct inotify_event))
 	#define BUF_LEN      (1024 * (EVENT_SIZE + 16))
-#elif defined (__OpenBSD__ || __FreeBSD__ || __NetBSD__ || __APPLE__) // {
-	#include <sys/event.h>
-	#define NOTIFY_INIT	kqueue()
 #endif
 
 #include <wand/MagickWand.h>
